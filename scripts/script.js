@@ -1,7 +1,7 @@
 const images = ["1.gif", "2.gif", "3.gif", "4.gif", "5.gif", "6.gif", "7.gif"]
 
 const num = prompt("quantas cartas?")
-displayCards(num);
+makeCards(num);
 
 function makeCards(num){
     let cardVector = [];
@@ -11,24 +11,31 @@ function makeCards(num){
         }
     }
 
-    console.log (cardVector);
+    cardVector.sort(mixer);
 
+    displayCards(cardVector);
+    
 }
 
 function displayCards(cards){
     const divCards = document.querySelector(".cards");
-    for (let i =0; i<cards/2; i++){
-        for (let j=0; j<2; j++){
+    console.log(cards);
+    for (let i =0; i<cards.length ; i++){
             divCards.innerHTML += `
             <div class="card">
             <div class="front-face face">
                 <img class="parrot" src="./figs/front.png" alt="">
             </div>
             <div class="back-face face">
-                <img class="image" src="./figs/${images[i]}" alt="">
+                <img class="image" src="./figs/${cards[i]}" alt="">
             </div>
         </div>`
-        }
     }
 
+}
+
+
+// função para auxiliar a embaralhar as cartas
+function mixer() { 
+	return Math.random() - 0.5; 
 }
