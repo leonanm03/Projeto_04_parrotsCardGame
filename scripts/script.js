@@ -1,6 +1,13 @@
 const images = ["1.gif", "2.gif", "3.gif", "4.gif", "5.gif", "6.gif", "7.gif"]
 
-const num = prompt("quantas cartas?")
+let num = prompt("Escolha uma quantidade par de cartas entre 4 e 14");
+
+while (num<4 || num> 14 || num%2 != 0){
+    num = prompt("Eu disse uma quantidade PAR, entre QUATRO(4) e QUARTORZE(14)")
+}
+
+
+
 makeCards(num);
 
 function makeCards(num){
