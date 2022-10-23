@@ -14,6 +14,7 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+/* título do jogo */
 header {
     margin: 40px 0;
     font-weight: 700;
@@ -23,13 +24,14 @@ header {
     text-align: center;
 }
 
+/* container das cartas */
 .cards {
-    padding: 0 92px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
+/* início configuração de carta */
 .parrot {
     width: 100px;
 }
@@ -72,15 +74,17 @@ header {
 .turned .front-face {
     transform: rotateY(-180deg);
 }
+/* fim configuração de carta */
 
 
+/* responsividade tela menores que 1110 px */
 @media (max-width: 1110px) {
     body {
         width: 100%;
     }
 }
 
-
+/* responsividade mobile menor que 335px */
 @media (max-width: 335px) {
     header {
         font-weight: 700;
