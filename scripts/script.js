@@ -44,9 +44,8 @@ function implementCards(cards) {
 }
 
 function turnCard(card) {
-    card.classList.toggle("turned");
+    card.classList.add("turned");
     turneds.push(card);
-    console.log(turneds, length);
 
     if (turneds.length >= 2) {
         compareCards(turneds[0], turneds[1]);
@@ -60,7 +59,6 @@ function compareCards(card1, card2) {
 
 
     if (card1.innerHTML == card2.innerHTML) {
-        alert("acertou");
         card1.onclick = "";
         card2.onclick = "";
         card1.classList.add("correct");
@@ -69,12 +67,13 @@ function compareCards(card1, card2) {
         card2.classList.remove("turned");
     }
     else {
-
-        card1.classList.remove("turned");
-        card2.classList.remove("turned");
-
+        setTimeout(unflip, 1000, card1, card2);
     }
 
 }
 
+function unflip(card1, card2) {
+    card1.classList.remove("turned");
+    card2.classList.remove("turned");
+}
 
