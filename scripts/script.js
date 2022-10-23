@@ -1,5 +1,6 @@
 const images = ["1.gif", "2.gif", "3.gif", "4.gif", "5.gif", "6.gif", "7.gif"]
 let turneds = [];
+let plays =0;
 
 let num = prompt("Escolha uma quantidade par de cartas entre 4 e 14");
 while (num < 4 || num > 14 || num % 2 != 0) {
@@ -46,6 +47,7 @@ function implementCards(cards) {
 function turnCard(card) {
     card.classList.add("turned");
     turneds.push(card);
+    plays++;
 
     if (turneds.length >= 2) {
         compareCards(turneds[0], turneds[1]);
@@ -70,6 +72,11 @@ function compareCards(card1, card2) {
         setTimeout(unflip, 1000, card1, card2);
     }
 
+    const corrects = document.querySelectorAll(".correct");
+    if (corrects.length >= num){
+        setTimeout(finishGame, 500);
+    }
+
 }
 
 function unflip(card1, card2) {
@@ -77,3 +84,6 @@ function unflip(card1, card2) {
     card2.classList.remove("turned");
 }
 
+function finishGame(){
+    alert(`Você ganhou em ${plays} jogadas!`);
+}
