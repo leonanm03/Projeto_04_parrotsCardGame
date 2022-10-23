@@ -6,6 +6,7 @@
 
 body {
     margin: auto;
+    width: 1110px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +22,8 @@ header {
     color: #75B79E;
     text-align: center;
 }
-.cards{
+
+.cards {
     padding: 0 92px;
     display: flex;
     justify-content: space-around;
@@ -62,11 +64,28 @@ header {
     transform: rotateY(180deg);
 }
 
-.turned  .back-face,
-.correct  .back-face {
+.turned .back-face,
+.correct .back-face {
     transform: rotateY(0deg);
 }
 
 .turned .front-face {
     transform: rotateY(-180deg);
+}
+
+
+@media (max-width: 1110px) {
+    body {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 335px) {
+    header {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 42px;
+
+    }
 }
