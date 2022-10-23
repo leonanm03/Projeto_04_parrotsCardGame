@@ -71,9 +71,11 @@ header {
     transform: rotateY(0deg);
 }
 
-.turned .front-face {
+.turned .front-face,
+.correct .front-face {
     transform: rotateY(-180deg);
 }
+
 /* fim configuração de carta */
 
 
